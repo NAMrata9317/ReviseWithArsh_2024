@@ -1,6 +1,19 @@
 //2513. Minimize the Maximum of Two Arrays
+
+//Solution1 -> but it'll not give correct answer for test cases like ->
+//divisor1 = 9, divisor2 = 4, uniqueCnt1 = 8, uniqueCnt2 = 3
+//Output 12, expected 11
 class Solution {
     public int minimizeSet(int divisor1, int divisor2, int uniqueCnt1, int uniqueCnt2) {
+        if(divisor1>divisor2){
+            int temp = divisor1;
+            divisor1 = divisor2;
+            divisor2 = temp;
+            
+            temp = uniqueCnt1;
+            uniqueCnt1 = uniqueCnt2;
+            uniqueCnt2 = temp;
+        }
         int maxn = 0;
         int[] arr1 = new int[uniqueCnt1];
         int a1=0;
